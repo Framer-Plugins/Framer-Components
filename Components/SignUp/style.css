@@ -1,0 +1,22 @@
+#SignUp .div-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+}
+
+#SignUp .div-row * {
+  color: #0099ff;
+}
+#SignUp .div-row *:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+#SignUp .button-back {
+  width: fit-content;
+  align-self: start;
+}
+#SignUp .button-back i {
+  margin-right: 3px;
+}

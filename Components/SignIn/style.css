@@ -1,0 +1,22 @@
+#SignIn .div-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+#SignIn .div-row * {
+  color: #0099ff;
+}
+#SignIn .div-row *:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+#SignIn .button-back {
+  width: fit-content;
+  align-self: start;
+}
+#SignIn .button-back i {
+  margin-right: 3px;
+}
