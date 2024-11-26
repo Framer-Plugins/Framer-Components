@@ -46,4 +46,4 @@ const AlertBlock = ({ Alert, setAlert }: AlertInterface) => {
   );
 };
 
-export default { AlertBlock };
+export default AlertBlock;
