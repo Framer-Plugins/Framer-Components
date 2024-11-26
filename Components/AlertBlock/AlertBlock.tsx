@@ -15,12 +15,10 @@ export interface AlertInterface {
 }
 
 const AlertBlock = ({ Alert, setAlert }: AlertInterface) => {
-
   if (!Alert) return null;
   if (!Alert.message) return null;
 
   let [ClassBlock, SetClassBlock] = useState<string>("alert-block");
-
 
   const CloseAlert = () => {
     SetClassBlock("alert-block alert-block-hide");
@@ -48,4 +46,4 @@ const AlertBlock = ({ Alert, setAlert }: AlertInterface) => {
   );
 };
 
-export default AlertBlock;
+export default { AlertBlock };
