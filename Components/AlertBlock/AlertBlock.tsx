@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 export interface AlertMessage {
@@ -15,6 +15,7 @@ export interface AlertInterface {
 }
 
 const AlertBlock = ({ Alert, setAlert }: AlertInterface) => {
+
   if (!Alert) return null;
   if (!Alert.message) return null;
 
