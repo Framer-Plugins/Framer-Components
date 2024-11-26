@@ -46,7 +46,8 @@
 }
 
 .error-block {
-  background-color: #cf6679;
+  /* background-color: #cf6679; */
+  background-color: #ffffff;
 }
 .info-block {
   background-color: #2196f3;
