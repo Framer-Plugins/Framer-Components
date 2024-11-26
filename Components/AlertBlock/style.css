@@ -1,0 +1,59 @@
+.alert-block {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+  opacity: 0;
+  animation: alert-show 0.5s forwards;
+  margin-top: 10px;
+}
+@keyframes alert-show {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.alert-block-hide {
+  animation: alert-hide 0.5s forwards;
+}
+
+@keyframes alert-hide {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.alert-block p {
+  color: #fff;
+}
+
+.alert-block i {
+  float: right;
+}
+.alert-block i:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.error-block {
+  background-color: #cf6679;
+}
+.info-block {
+  background-color: #2196f3;
+}
+.warning-block {
+  background-color: #fb8c00;
+}
+.success-block {
+  background-color: #4caf50;
+}

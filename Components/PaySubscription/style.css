@@ -1,0 +1,19 @@
+#PaySubscription {
+  gap: 0px;
+}
+
+#PaySubscription .button-back {
+  width: fit-content;
+  align-self: start;
+}
+#PaySubscription .button-back i {
+  margin-right: 3px;
+}
+
+#checkout {
+  width: calc(100% + 30px);
+  border-radius: 20px;
+  overflow: auto;
+  margin-left: -15px;
+  margin-right: -15px;
+}
