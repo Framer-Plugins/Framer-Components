@@ -35,7 +35,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   externals: {
-    react: "react",
-    "react-dom": "react-router-dom",
+    //react: "react",
+    //"react-dom": "react-router-dom",
   },
 };
