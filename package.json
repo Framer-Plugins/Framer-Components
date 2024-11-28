@@ -2,7 +2,7 @@
   "name": "framer-components",
   "version": "1.0.1",
   "description": "",
-  "main": "main.tsx",
+  "main": "./src/main.tsx",
   "scripts": {
     "build": "webpack --mode production",
     "type-check": "tsc --noEmit",
