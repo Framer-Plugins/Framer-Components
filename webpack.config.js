@@ -7,7 +7,7 @@ module.exports = {
     filename: "ZqFramerComponents.js",
     path: path.resolve(__dirname, "dist"),
     library: "ZqFramerComponents",
-    libraryTarget: "umd",
+    libraryTarget: "window",
   },
   module: {
     rules: [

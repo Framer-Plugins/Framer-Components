@@ -6,17 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("React"));
-	else if(typeof define === 'function' && define.amd)
-		define(["React"], factory);
-	else if(typeof exports === 'object')
-		exports["ZqFramerComponents"] = factory(require("React"));
-	else
-		root["ZqFramerComponents"] = factory(root["React"]);
-})(self, (__WEBPACK_EXTERNAL_MODULE_react__) => {
-return /******/ (() => { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
@@ -146,7 +136,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \************************/
 /***/ ((module) => {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
+module.exports = window["React"];
 
 /***/ })
 
@@ -228,8 +218,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/main.tsx");
+/******/ 	window.ZqFramerComponents = __webpack_exports__;
 /******/ 	
-/******/ 	return __webpack_exports__;
 /******/ })()
 ;
-});
