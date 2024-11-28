@@ -17,7 +17,11 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react",
+              "@babel/preset-typescript",
+            ],
           },
         },
       },
@@ -31,7 +35,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   externals: {
-    //react: "React",
-    //"react-dom": "ReactDOM",
+    react: "react",
+    "react-dom": "react-router-dom",
   },
 };
