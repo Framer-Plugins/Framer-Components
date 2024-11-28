@@ -1,11 +1,11 @@
-import { framer } from "framer-plugin";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+/* import { framer } from "framer-plugin";
+import { useNavigate } from "react-router-dom"; */
+import React, { useState } from "react";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import axios from "axios";
 import "./style.css";
 
-const MyComponent = () => {
+const MyComponent = ({ framer, useNavigate }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
