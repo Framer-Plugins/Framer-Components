@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 export interface AlertMessage {
@@ -16,8 +16,6 @@ export interface AlertInterface {
 
 const AlertBlock = ({ Alert, setAlert }: AlertInterface) => {
 
-  console.log(React);
-  console.log(useState);
   if (!Alert) return null;
   if (!Alert.message) return null;
 
@@ -30,16 +28,7 @@ const AlertBlock = ({ Alert, setAlert }: AlertInterface) => {
     }, 500);
   };
 
-  useEffect(() => {
-    // Устанавливаем таймер для скрытия alert, если время задано
-    const timer = setTimeout(() => {
-      CloseAlert();
-    }, Alert.time || 10000); // Если time не задан, то таймер будет 10 секунд
-
-    return () => clearTimeout(timer); // Очистить таймер при размонтировании компонента
-  }, [Alert, setAlert]);
-
-  /* 
+  
   if (Alert.time) {
     setTimeout(() => {
       CloseAlert();
@@ -48,7 +37,7 @@ const AlertBlock = ({ Alert, setAlert }: AlertInterface) => {
     setTimeout(() => {
       CloseAlert();
     }, 10000);
-  } */
+  }
 
   return (
     <div className={Alert.type + "-block " + ClassBlock}>
