@@ -15,6 +15,9 @@ export interface AlertInterface {
 }
 
 const AlertBlock = ({ Alert, setAlert }: AlertInterface) => {
+
+  console.log(React);
+  console.log(useState);
   if (!Alert) return null;
   if (!Alert.message) return null;
 
