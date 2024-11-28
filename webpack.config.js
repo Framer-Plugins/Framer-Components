@@ -14,7 +14,12 @@ module.exports = {
       {
         test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
+          },
+        },
       },
       {
         test: /\.css$/,
@@ -26,7 +31,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   externals: {
-    react: "React",
-    "react-dom": "ReactDOM",
+    //react: "React",
+    //"react-dom": "ReactDOM",
   },
 };
