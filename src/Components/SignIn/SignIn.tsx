@@ -8,7 +8,7 @@ import "./style.css";
 const API_BASE_URL =
   "https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/wf";
 
-const SignIn = (framer, useNavigate) => {
+const SignIn = ({framer, useNavigate}) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
