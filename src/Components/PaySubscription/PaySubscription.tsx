@@ -1,13 +1,12 @@
-import { framer } from "framer-plugin";
-import { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+/* import { framer } from "framer-plugin"; */
+/* import { useNavigate } from "react-router-dom"; */
+import { useState, useCallback } from "react";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import EmbeddedCheckout from "./EmbeddedCheckout";
 import "./style.css";
 
-const MyComponent = () => {
+const PaySubscription = ({ framer, useNavigate }) => {
   const [alert, setAlert] = useState<AlertMessage | null>();
-  const [loading, setLoading] = useState<boolean>();
   const navigate = useNavigate();
 
   const handleLogout = useCallback(async () => {
@@ -36,11 +35,11 @@ const MyComponent = () => {
       </button>
       <p className="text-center">subscribe to all our plugins</p>
 
-      <EmbeddedCheckout />
+      <EmbeddedCheckout framer={framer} useNavigate={useNavigate} />
 
       <AlertBlock Alert={alert} setAlert={setAlert} />
     </main>
   );
 };
 
-export default MyComponent;
+export default PaySubscription;

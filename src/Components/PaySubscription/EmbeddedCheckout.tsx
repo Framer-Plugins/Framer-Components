@@ -1,18 +1,20 @@
+/* import { framer } from "framer-plugin"; */
+/* import { useNavigate } from "react-router-dom"; */
+import { StripePublishableKey } from "../../utils/keys";
 import { useEffect, useState, useCallback } from "react";
 import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { framer } from "framer-plugin";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { StripePublishableKey } from "../../utils/keys";
 
-const StripeLoad = loadStripe(StripePublishableKey);
-
-const EmbeddedCheckoutComponent = () => {
+const EmbeddedCheckoutComponent = ({
+  framer,
+  useNavigate,
+}) => {
+  const StripeLoad = loadStripe(StripePublishableKey);
   const [alert, setAlert] = useState<AlertMessage | null | undefined>(null);
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [isComplete, setIsComplete] = useState(false);
