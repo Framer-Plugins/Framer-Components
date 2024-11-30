@@ -8,7 +8,4 @@ export default defineConfig({
   build: {
     target: "ES2022",
   },
-  optimizeDeps: {
-    include: ["prop-types"],
-  },
 });
