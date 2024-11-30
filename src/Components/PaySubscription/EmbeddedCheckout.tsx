@@ -2,10 +2,10 @@
 /* import { useNavigate } from "react-router-dom"; */
 import { StripePublishableKey } from "../../utils/keys";
 import { useEffect, useState, useCallback } from "react";
-/* import {
+import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout,
-} from "@stripe/react-stripe-js"; */
+} from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import axios from "axios";
@@ -21,17 +21,17 @@ const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
   const handleComplete = async () => {
     setIsComplete(true);
     console.log("true")
-    /* let UserEmail = await framer.getPluginData("UserEmail"); */
+    let UserEmail = await framer.getPluginData("UserEmail");
 
     let count = 0;
     const intervalID = setInterval(async () => {
       count++;
 
-      /* let data = {
+      let data = {
         email: UserEmail,
         subscriptionID: await framer.getPluginData("UserSubscribtionID"),
-      }; */
-     /*  let user = await axios.post(
+      };
+      let user = await axios.post(
         `https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/wf/check user`,
         data
       );
@@ -57,7 +57,7 @@ const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
           clearInterval(intervalID);
           navigate("/");
         }
-      } */
+      }
       if (count === 10) {
         clearInterval(intervalID);
         framer.closePlugin();
@@ -109,9 +109,9 @@ const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
   };
   return (
     <div id="checkout" className="mt-3">
-      {/* <EmbeddedCheckoutProvider stripe={StripeLoad} options={options}>
+      <EmbeddedCheckoutProvider stripe={StripeLoad} options={options}>
         <EmbeddedCheckout />
-      </EmbeddedCheckoutProvider> */}
+      </EmbeddedCheckoutProvider>
       <AlertBlock Alert={alert} setAlert={setAlert} />
     </div>
   );
