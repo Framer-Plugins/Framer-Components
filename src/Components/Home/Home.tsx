@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import "./style.css";
 import axios from "axios";
+import React from "react";
+import { API_BASE_URL } from "../../utils/keys";
 
 interface NavButtonProps {
   activeTab: boolean;
@@ -30,7 +32,7 @@ function Home({ framer, Link, Outlet, useLocation, useNavigate}) {
           subscriptionID: await framer.getPluginData("UserSubscribtionID"),
         };
         let user = await axios.post(
-          `https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/wf/check user`,
+          `${API_BASE_URL}/check user`,
           data
         );
         if (user.data.response) {
