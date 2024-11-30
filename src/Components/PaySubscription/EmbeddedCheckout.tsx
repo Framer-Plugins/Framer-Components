@@ -19,7 +19,6 @@ const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
 
   const handleComplete = async () => {
     setIsComplete(true);
-    console.log("true")
     let UserEmail = await framer.getPluginData("UserEmail");
 
     let count = 0;
