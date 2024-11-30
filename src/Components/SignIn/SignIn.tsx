@@ -6,8 +6,10 @@ import axios from "axios";
 import "./style.css";
 import { API_BASE_URL } from "../../utils/keys";
 import React from "react";
+console.log(API_BASE_URL)
 
 const SignIn = ({ framer, useNavigate }) => {
+  console.log(API_BASE_URL)
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
