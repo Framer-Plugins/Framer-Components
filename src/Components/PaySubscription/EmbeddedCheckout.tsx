@@ -20,17 +20,17 @@ const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
 
   const handleComplete = async () => {
     setIsComplete(true);
-    let UserEmail = await framer.getPluginData("UserEmail");
+    console.log("true")
+    /* let UserEmail = await framer.getPluginData("UserEmail"); */
 
     let count = 0;
     const intervalID = setInterval(async () => {
       count++;
 
-      let data = {
+      /* let data = {
         email: UserEmail,
         subscriptionID: await framer.getPluginData("UserSubscribtionID"),
-      };
-      console.log(data);
+      }; */
      /*  let user = await axios.post(
         `https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/wf/check user`,
         data

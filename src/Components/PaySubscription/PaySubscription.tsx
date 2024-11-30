@@ -36,7 +36,7 @@ const PaySubscription = ({ framer, useNavigate }) => {
       </button>
       <p className="text-center">subscribe to all our plugins</p>
 
-      {/* <EmbeddedCheckout framer={framer} useNavigate={useNavigate} /> */}
+      <EmbeddedCheckout framer={framer} useNavigate={useNavigate} /> 
 
       <AlertBlock Alert={alert} setAlert={setAlert} />
     </main>
