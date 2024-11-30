@@ -30,15 +30,12 @@ const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
         email: UserEmail,
         subscriptionID: await framer.getPluginData("UserSubscribtionID"),
       };
-      let user = await axios.post(
+      console.log(data);
+     /*  let user = await axios.post(
         `https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/wf/check user`,
         data
       );
       if (user.data.response) {
-        /* await framer.setPluginData(
-          "UserSubscribtionID",
-          user.data.response.User["subscription ID"] ?? ""
-        ); */
         await framer.setPluginData(
           "UserIsSubscribed",
           user.data.response.User["is subscribed?"]
@@ -60,7 +57,7 @@ const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
           clearInterval(intervalID);
           navigate("/");
         }
-      }
+      } */
       if (count === 10) {
         clearInterval(intervalID);
         framer.closePlugin();
