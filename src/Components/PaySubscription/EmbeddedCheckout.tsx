@@ -10,10 +10,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import axios from "axios";
 
-const EmbeddedCheckoutComponent = ({
-  framer,
-  useNavigate,
-}) => {
+const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
   const StripeLoad = loadStripe(StripePublishableKey);
   const [alert, setAlert] = useState<AlertMessage | null | undefined>(null);
   const [clientSecret, setClientSecret] = useState<string | null>(null);
@@ -22,32 +19,43 @@ const EmbeddedCheckoutComponent = ({
 
   const handleComplete = async () => {
     setIsComplete(true);
-    let UserID = await framer.getPluginData("UserID");
+    let UserEmail = await framer.getPluginData("UserEmail");
+
     let count = 0;
     const intervalID = setInterval(async () => {
       count++;
 
-      let user = await axios.get(
-        `https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/obj/User/${UserID}`
+      let data = {
+        email: UserEmail,
+        subscriptionID: await framer.getPluginData("UserSubscribtionID"),
+      };
+      let user = await axios.post(
+        `https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/wf/check user`,
+        data
       );
       if (user.data.response) {
-        await framer.setPluginData(
+        /* await framer.setPluginData(
           "UserSubscribtionID",
-          user.data.response["subscription ID"]
-        );
+          user.data.response.User["subscription ID"] ?? ""
+        ); */
         await framer.setPluginData(
           "UserIsSubscribed",
-          user.data.response["is subscribed?"].toString()
+          user.data.response.User["is subscribed?"]
+            ? user.data.response.User["is subscribed?"].toString()
+            : "false"
         );
         await framer.setPluginData(
           "UserSubscribtionDate",
-          user.data.response["subscription date"]
+          user.data.response.User["subscription date"]
+            ? user.data.response.User["subscription date"].toString()
+            : ""
         );
         await framer.setPluginData(
           "UserSubscribtionCancelDate",
-          user.data.response["subscription cancel date"] ?? ""
+          user.data.response.User["subscription cancel date"] ?? ""
         );
-        if (user.data.response["is subscribed?"]) {
+
+        if (user.data.response.User["is subscribed?"]) {
           clearInterval(intervalID);
           navigate("/");
         }

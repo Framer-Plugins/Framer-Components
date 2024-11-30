@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import EmbeddedCheckout from "./EmbeddedCheckout";
 import "./style.css";
+import React from "react";
 
 const PaySubscription = ({ framer, useNavigate }) => {
   const [alert, setAlert] = useState<AlertMessage | null>();

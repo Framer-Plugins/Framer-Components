@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import axios from "axios";
 import "./style.css";
+import { API_BASE_URL } from "../../utils/keys";
 
 const MyComponent = ({ framer, useNavigate }) => {
   const [email, setEmail] = useState<string>("");
@@ -41,7 +42,7 @@ const MyComponent = ({ framer, useNavigate }) => {
     };
     axios
       .post(
-        "https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/wf/sign_up",
+        `${API_BASE_URL}/sign_up`,
         data
       )
       .then(async (res) => {

@@ -4,11 +4,10 @@ import { useState } from "react";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import axios from "axios";
 import "./style.css";
+import { API_BASE_URL } from "../../utils/keys";
+import React from "react";
 
-const API_BASE_URL =
-  "https://zeroqodeplugins.bubbleapps.io/version-test/api/1.1/wf";
-
-const SignIn = ({framer, useNavigate}) => {
+const SignIn = ({ framer, useNavigate }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
