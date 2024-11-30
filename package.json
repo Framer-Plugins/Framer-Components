@@ -12,10 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "@babel/preset-env": "^7.26.0",
-    "@stripe/react-stripe-js": "^2.8.1",
+    "@stripe/react-stripe-js": "^2.9.0",
     "@stripe/stripe-js": "^4.10.0",
     "axios": "^1.7.7",
-    "vite-plugin-mkcert": "^1"
+    "vite-plugin-mkcert": "^1",
+    "stripe": "^17.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",

@@ -1,15 +1,14 @@
 /* import { framer } from "framer-plugin"; */
 /* import { useNavigate } from "react-router-dom"; */
+import React, { useEffect, useState, useCallback } from "react";
+import axios from "axios";
 import { StripePublishableKey } from "../../utils/keys";
-import { useEffect, useState, useCallback } from "react";
+import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
-import axios from "axios";
-import React from "react";
 
 const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
   const StripeLoad = loadStripe(StripePublishableKey);
