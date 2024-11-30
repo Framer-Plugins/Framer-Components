@@ -9,6 +9,7 @@ import {
 import { loadStripe } from "@stripe/stripe-js";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import axios from "axios";
+import React from "react";
 
 const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
   const StripeLoad = loadStripe(StripePublishableKey);
