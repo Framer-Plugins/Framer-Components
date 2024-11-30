@@ -2,10 +2,10 @@
 /* import { useNavigate } from "react-router-dom"; */
 import { StripePublishableKey } from "../../utils/keys";
 import { useEffect, useState, useCallback } from "react";
-import {
+/* import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout,
-} from "@stripe/react-stripe-js";
+} from "@stripe/react-stripe-js"; */
 import { loadStripe } from "@stripe/stripe-js";
 import AlertBlock, { AlertMessage } from "../AlertBlock/AlertBlock";
 import axios from "axios";
@@ -109,9 +109,9 @@ const EmbeddedCheckoutComponent = ({ framer, useNavigate }) => {
   };
   return (
     <div id="checkout" className="mt-3">
-      <EmbeddedCheckoutProvider stripe={StripeLoad} options={options}>
+      {/* <EmbeddedCheckoutProvider stripe={StripeLoad} options={options}>
         <EmbeddedCheckout />
-      </EmbeddedCheckoutProvider>
+      </EmbeddedCheckoutProvider> */}
       <AlertBlock Alert={alert} setAlert={setAlert} />
     </div>
   );
